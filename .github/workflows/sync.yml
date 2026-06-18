@@ -12,13 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download lib.zip
-        run: |
-          mkdir -p menu
-          gh release download --repo oldtart1282/menu --pattern "lib.zip" -O menu/lib.zip
-        env:
-          GH_TOKEN: ${{ secrets.MENU_TOKEN }}
-
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
